@@ -87,14 +87,14 @@
     error.textContent = "";
     status.textContent = "";
     list.replaceChildren();
-    var count = Number(form.elements.count.value);
+    var count = Number(form.querySelector('[name="count"]').value);
     if (!Number.isInteger(count) || count < 1 || count > 10) {
       error.textContent = "個数は1から10です。";
       return;
     }
     for (var i = 0; i < count; i++) {
       var result = generatePassword({
-        length: Number(form.elements.length.value),
+        length: Number(form.querySelector('[name="length"]').value),
         lower: checked("lower"),
         upper: checked("upper"),
         digit: checked("digit"),
