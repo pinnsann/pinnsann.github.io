@@ -75,12 +75,9 @@ main { padding: 8px 0 72px; }
 }
 .card-grid { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .card {
-  display: grid;
-  grid-template-columns: 4.5rem minmax(0, 1fr);
-  gap: 2px 18px;
-  align-items: center;
+  display: block;
   min-height: 0;
-  padding: 16px 8px;
+  padding: 14px 2px;
   background: transparent;
   border: 0;
   border-bottom: 1px solid var(--line);
@@ -89,9 +86,9 @@ main { padding: 8px 0 72px; }
   text-decoration: none;
 }
 .card:hover { background: var(--surface); }
-.kicker { margin: 0; color: #8a8a84; font-size: 12px; font-weight: 500; grid-row: 1 / span 2; }
+.kicker { margin: 0 0 6px; color: #8a8a84; font-size: 12px; font-weight: 500; }
 .card h3 { margin: 0; font-size: 16px; font-weight: 600; }
-.card p { margin: 0; font-size: 13px; }
+.card p { margin: 4px 0 0; font-size: 13px; }
 .page-head { margin: 28px 0 18px; max-width: 40rem; }
 .page-head h1 { font-size: 24px; }
 .page-head .kicker { display: block; margin-bottom: 6px; }
