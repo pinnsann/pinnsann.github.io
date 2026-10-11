@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文字数カウント | すぐ道具</title>
+  <meta name="description" content="文字数と、400字の原稿用紙だと何枚かを数えます。">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へ</a>
+  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html">すぐ道具</a><nav class="nav" aria-label="主要"><a href="index.html">一覧</a></nav></div></header>
+  <main id="main" class="wrap">
+    <header class="page-head">
+      <p class="kicker">数える</p>
+      <h1>文字数</h1>
+      <p>改行も1文字に数えます。原稿用紙の枚数は、改行を抜いた文字数を400で割った数です。絵文字が合体していると、見た目より多く出ることがあります。</p>
+    </header>
+    <div class="stack">
+      <label class="field"><span>文章</span><textarea id="source" rows="12" placeholder="ここに貼り付け"></textarea></label>
+      <button id="fill-counter" class="btn btn-small" type="button">例文を入れる</button>
+      <div class="stats" aria-live="polite">
+        <div class="stat"><b id="count-chars">0</b><span>文字数</span></div>
+        <div class="stat"><b id="count-nobreak">0</b><span>改行を除く</span></div>
+        <div class="stat"><b id="count-space">0</b><span>空白も除く</span></div>
+        <div class="stat"><b id="count-lines">0</b><span>行数</span></div>
+        <div class="stat"><b id="count-sheets" data-sheets="0" data-remainder="0">0枚</b><span>原稿用紙（400字）</span></div>
+        <div class="stat"><b id="count-x">あと280</b><span>280字まで</span></div>
+        <div class="stat"><b id="count-ig">あと2200</b><span>2200字まで</span></div>
+      </div>
+    </div>
+    <p class="related"><a href="invoice.html">請求書</a><a href="image.html">画像</a><a href="password.html">パスワード</a><a href="calendar.html">和暦</a><a href="markdown.html">Markdown</a></p>
+  </main>
+  <footer class="site-footer"><div class="wrap"><p>処理はこの端末の中だけです。2026-10-12</p></div></footer>
+  <script src="js/counter.js"></script>
+</body>
+</html>

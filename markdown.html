@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markdownプレビュー | すぐ道具</title>
+  <meta name="description" content="Markdownの見出しやリストを、その場で表示します。">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へ</a>
+  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html">すぐ道具</a><nav class="nav" aria-label="主要"><a href="index.html">一覧</a></nav></div></header>
+  <main id="main" class="wrap">
+    <header class="page-head">
+      <p class="kicker">下書き</p>
+      <h1>Markdown</h1>
+      <p>見出し、太字、リスト、引用、コード、httpsのリンク。それ以外のHTMLは、タグのまま文字で出します。</p>
+    </header>
+    <div class="layout">
+      <section class="panel">
+        <label class="field"><span>原稿</span><textarea id="md-input" rows="16" placeholder="# 見出し"></textarea></label>
+        <div class="btn-row">
+          <button id="fill-md" class="btn btn-small" type="button">例文を入れる</button>
+          <button id="copy-md" class="btn btn-small" type="button">HTMLをコピー</button>
+        </div>
+        <p id="md-status" role="status"></p>
+      </section>
+      <article id="md-preview" class="preview-frame" aria-live="polite"></article>
+    </div>
+    <p class="related"><a href="invoice.html">請求書</a><a href="counter.html">文字数</a><a href="image.html">画像</a><a href="password.html">パスワード</a><a href="calendar.html">和暦</a></p>
+  </main>
+  <footer class="site-footer"><div class="wrap"><p>処理はこの端末の中だけです。2026-10-12</p></div></footer>
+  <script src="js/markdown.js"></script>
+</body>
+</html>

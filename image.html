@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>画像のリサイズと圧縮 | すぐ道具</title>
+  <meta name="description" content="画像の長辺を縮小して、JPEG、PNG、WebPで保存します。">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へ</a>
+  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html">すぐ道具</a><nav class="nav" aria-label="主要"><a href="index.html">一覧</a></nav></div></header>
+  <main id="main" class="wrap">
+    <header class="page-head">
+      <p class="kicker">縮小</p>
+      <h1>画像</h1>
+      <p>指定した長辺より大きいものだけ縮小します。小さい画像はそのままです。選んだファイルは、この画面の中で処理します。</p>
+    </header>
+    <div class="layout">
+      <form id="image-form" class="panel">
+        <label class="field"><span>画像</span><input name="file" type="file" accept="image/*"></label>
+        <div class="grid-2">
+          <label class="field"><span>長辺の上限（px）</span><input name="maxEdge" type="number" min="320" max="8000" step="1" value="1600"></label>
+          <label class="field"><span>JPEG/WebPの品質</span><input name="quality" type="number" min="0.1" max="1" step="0.05" value="0.8"></label>
+        </div>
+        <label class="field"><span>形式</span>
+          <select name="type">
+            <option value="image/jpeg">JPEG</option>
+            <option value="image/webp">WebP</option>
+            <option value="image/png">PNG</option>
+          </select>
+        </label>
+        <div class="btn-row">
+          <button class="btn btn-primary" type="submit">変換する</button>
+          <button id="sample-image" class="btn" type="button">試し画像で変換</button>
+        </div>
+        <p class="note">HEICなど、ブラウザが読めない形式は失敗します。そのときはJPEGかPNGを選んでください。</p>
+      </form>
+      <div class="panel">
+        <p id="image-meta" aria-live="polite">まだ変換していません。</p>
+        <div id="image-preview" class="preview-frame"></div>
+        <p><a id="image-download" class="btn btn-primary" hidden>圧縮した画像を保存</a></p>
+      </div>
+    </div>
+    <p class="related"><a href="invoice.html">請求書</a><a href="counter.html">文字数</a><a href="password.html">パスワード</a><a href="calendar.html">和暦</a><a href="markdown.html">Markdown</a></p>
+  </main>
+  <footer class="site-footer"><div class="wrap"><p>処理はこの端末の中だけです。2026-10-12</p></div></footer>
+  <script src="js/image.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>請求書を印刷する | すぐ道具</title>
+  <meta name="description" content="登録番号と明細を入れて、請求書を印刷します。税額は税率ごとの合計から1円未満を切り捨てます。">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">本文へ</a>
+  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html">すぐ道具</a><nav class="nav" aria-label="主要"><a href="index.html">一覧</a></nav></div></header>
+  <main id="main" class="wrap">
+    <header class="page-head">
+      <p class="kicker">印刷</p>
+      <h1>請求書</h1>
+      <p>登録番号と明細を入れて印刷します。消費税は、同じ税率の税抜合計を足してから、1円未満を切り捨てています。提出する前の確認は自分でやってください。</p>
+    </header>
+    <div class="layout">
+      <form id="invoice-form" class="panel no-print">
+        <div class="grid-2">
+          <label class="field"><span>発行者</span><input name="issuer" autocomplete="name"></label>
+          <label class="field"><span>登録番号</span><input name="reg" placeholder="Tと数字13桁" autocomplete="off"></label>
+        </div>
+        <p id="reg-warn" class="warn" role="status"></p>
+        <label class="field"><span>住所</span><input name="address" autocomplete="street-address"></label>
+        <div class="grid-2">
+          <label class="field"><span>電話</span><input name="tel" autocomplete="tel"></label>
+          <label class="field"><span>宛先</span><input name="client" autocomplete="organization"></label>
+        </div>
+        <div class="grid-2">
+          <label class="field"><span>発行日</span><input name="date" type="date" required></label>
+          <label class="field"><span>支払期限</span><input name="due" type="date"></label>
+        </div>
+        <label class="field"><span>請求番号</span><input name="number"></label>
+        <label class="field"><span>振込先</span><input name="bank"></label>
+        <label class="field"><span>備考</span><textarea name="notes" rows="2"></textarea></label>
+        <div id="lines"></div>
+        <div class="btn-row">
+          <button id="add-line" class="btn btn-small" type="button">明細を追加</button>
+          <button id="fill-sample" class="btn btn-small" type="button">記入例</button>
+        </div>
+        <p id="invoice-total" data-total="0">合計 0円</p>
+        <div class="btn-row">
+          <button id="print-invoice" class="btn btn-primary" type="button">印刷する</button>
+          <button id="clear-invoice" class="btn" type="button">入力を消す</button>
+        </div>
+        <p class="note">下書きは、このブラウザに残ります。</p>
+      </form>
+      <article class="sheet" id="sheet"><div id="sheet-body"></div></article>
+    </div>
+    <p class="related no-print"><a href="counter.html">文字数</a><a href="image.html">画像</a><a href="password.html">パスワード</a><a href="calendar.html">和暦</a><a href="markdown.html">Markdown</a></p>
+  </main>
+  <footer class="site-footer"><div class="wrap"><p>処理はこの端末の中だけです。2026-10-12</p></div></footer>
+  <script src="js/invoice.js"></script>
+</body>
+</html>
